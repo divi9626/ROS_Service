@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/divyam/beginner_tutorials/devel -DCMAKE_INSTALL_PREFIX=/home/divyam/beginner_tutorials/install -G Unix Makefiles
