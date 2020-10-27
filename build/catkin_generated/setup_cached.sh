@@ -8,6 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/divyam/beginner_tutorials/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/divyam/beginner_tutorials/devel/lib:$LD_LIBRARY_PATH"
 export PATH="/opt/ros/kinetic/bin:/home/divyam/anaconda3/condabin:/home/divyam/bin:/home/divyam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/divyam/beginner_tutorials/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/divyam/beginner_tutorials/devel/share/common-lisp"
