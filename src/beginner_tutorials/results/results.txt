@@ -3,4 +3,9 @@ CPP-LINT
 Done processing ./publisher.cpp
 Done processing ./suscriber.cpp
 
+CPP-CHECK
+Checking src/beginner_tutorials/scripts/publisher.cpp...
+1/2 files checked 52% done
+Checking src/beginner_tutorials/scripts/subscriber.cpp...
+2/2 files checked 100% done
 
