@@ -1,5 +1,5 @@
 /**
- * @file publisher.cpp
+ * @file talker.cpp
  * @author Divyam Garg
  * @brief This file publishes the data in string format
  * @version 0.1
@@ -15,13 +15,12 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 #include "../include/publisher.hpp"
-#include "../beginner_tutorials/changeBaseString.h"
+#include "beginner_tutorials/changeBaseString.h"
 
 DefaultString obj;
 
-bool newMessage(beginner_tutorials::changeBaseString::Request &requestService,
-                beginner_tutorials::changeBaseString::Response &responseClient) {
-  obj.default_msg = req.inputString;
+bool newMessage(beginner_tutorials::changeBaseString::Request &requestService, beginner_tutorials::changeBaseString::Response &responseClient) {
+  obj.default_msg = requestService.inputString;
   ROS_WARN_STREAM("The user changed the string");
   responseClient.newString = requestService.inputString;
   return true;
@@ -61,11 +60,13 @@ int main(int argc, char **argv) {
   }
   ros::Rate loop_rate(rate);
   
-  std_msgs::String msg;
-  msg.data = "Robots are Awesome";
-
   while (ros::ok()) {
 
+  	std_msgs::String msg;
+
+  	std::string msg_data;
+    msg_data = obj.default_msg;
+    msg.data = msg_data;
     ROS_INFO_STREAM(msg_data);
     chatter_pub.publish(msg);
     ros::spinOnce();

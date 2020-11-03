@@ -78,17 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -100,16 +89,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : test/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -132,6 +121,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,6 +166,81 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+beginner_tutorials/CMakeFiles/subscriber.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/subscriber.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/subscriber.dir/rule
+
+# Convenience name for target.
+subscriber: beginner_tutorials/CMakeFiles/subscriber.dir/rule
+
+.PHONY : subscriber
+
+# fast build rule for target.
+subscriber/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/build
+.PHONY : subscriber/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/publisher.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/publisher.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/publisher.dir/rule
+
+# Convenience name for target.
+publisher: beginner_tutorials/CMakeFiles/publisher.dir/rule
+
+.PHONY : publisher
+
+# fast build rule for target.
+publisher/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/build
+.PHONY : publisher/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_genpy: beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/rule
+
+.PHONY : beginner_tutorials_genpy
+
+# fast build rule for target.
+beginner_tutorials_genpy/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/build
+.PHONY : beginner_tutorials_genpy/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_gennodejs: beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/rule
+
+.PHONY : beginner_tutorials_gennodejs
+
+# fast build rule for target.
+beginner_tutorials_gennodejs/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/build
+.PHONY : beginner_tutorials_gennodejs/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_genlisp: beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/rule
+
+.PHONY : beginner_tutorials_genlisp
+
+# fast build rule for target.
+beginner_tutorials_genlisp/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/build
+.PHONY : beginner_tutorials_genlisp/fast
+
+# Convenience name for target.
 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
 	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/rule
@@ -179,6 +254,36 @@ std_msgs_generate_messages_py: beginner_tutorials/CMakeFiles/std_msgs_generate_m
 std_msgs_generate_messages_py/fast:
 	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_generate_messages_py: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/rule
+
+.PHONY : beginner_tutorials_generate_messages_py
+
+# fast build rule for target.
+beginner_tutorials_generate_messages_py/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build
+.PHONY : beginner_tutorials_generate_messages_py/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_generate_messages: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/rule
+
+.PHONY : beginner_tutorials_generate_messages
+
+# fast build rule for target.
+beginner_tutorials_generate_messages/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build
+.PHONY : beginner_tutorials_generate_messages/fast
 
 # Convenience name for target.
 beginner_tutorials/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -346,6 +451,36 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_generate_messages_nodejs: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/rule
+
+.PHONY : beginner_tutorials_generate_messages_nodejs
+
+# fast build rule for target.
+beginner_tutorials_generate_messages_nodejs/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/build
+.PHONY : beginner_tutorials_generate_messages_nodejs/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
 beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
 	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
@@ -376,49 +511,94 @@ std_msgs_generate_messages_eus/fast:
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_changeBaseString.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_changeBaseString.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_changeBaseString.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+_beginner_tutorials_generate_messages_check_deps_changeBaseString: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_changeBaseString.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : _beginner_tutorials_generate_messages_check_deps_changeBaseString
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+_beginner_tutorials_generate_messages_check_deps_changeBaseString/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_changeBaseString.dir/build.make beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_changeBaseString.dir/build
+.PHONY : _beginner_tutorials_generate_messages_check_deps_changeBaseString/fast
 
 # Convenience name for target.
-beginner_tutorials/CMakeFiles/publisher.dir/rule:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/publisher.dir/rule
-.PHONY : beginner_tutorials/CMakeFiles/publisher.dir/rule
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-publisher: beginner_tutorials/CMakeFiles/publisher.dir/rule
+beginner_tutorials_generate_messages_cpp: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/rule
 
-.PHONY : publisher
+.PHONY : beginner_tutorials_generate_messages_cpp
 
 # fast build rule for target.
-publisher/fast:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/build
-.PHONY : publisher/fast
+beginner_tutorials_generate_messages_cpp/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build
+.PHONY : beginner_tutorials_generate_messages_cpp/fast
 
 # Convenience name for target.
-beginner_tutorials/CMakeFiles/subscriber.dir/rule:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/subscriber.dir/rule
-.PHONY : beginner_tutorials/CMakeFiles/subscriber.dir/rule
+beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/rule
 
 # Convenience name for target.
-subscriber: beginner_tutorials/CMakeFiles/subscriber.dir/rule
+beginner_tutorials_gencpp: beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/rule
 
-.PHONY : subscriber
+.PHONY : beginner_tutorials_gencpp
 
 # fast build rule for target.
-subscriber/fast:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/build
-.PHONY : subscriber/fast
+beginner_tutorials_gencpp/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/build
+.PHONY : beginner_tutorials_gencpp/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_generate_messages_eus: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/rule
+
+.PHONY : beginner_tutorials_generate_messages_eus
+
+# fast build rule for target.
+beginner_tutorials_generate_messages_eus/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/build
+.PHONY : beginner_tutorials_generate_messages_eus/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_generate_messages_lisp: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/rule
+
+.PHONY : beginner_tutorials_generate_messages_lisp
+
+# fast build rule for target.
+beginner_tutorials_generate_messages_lisp/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build
+.PHONY : beginner_tutorials_generate_messages_lisp/fast
+
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/rule
+
+# Convenience name for target.
+beginner_tutorials_geneus: beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/rule
+
+.PHONY : beginner_tutorials_geneus
+
+# fast build rule for target.
+beginner_tutorials_geneus/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/build
+.PHONY : beginner_tutorials_geneus/fast
 
 scripts/publisher.o: scripts/publisher.cpp.o
 
@@ -482,12 +662,21 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... subscriber"
+	@echo "... publisher"
+	@echo "... beginner_tutorials_genpy"
+	@echo "... beginner_tutorials_gennodejs"
+	@echo "... beginner_tutorials_genlisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... beginner_tutorials_generate_messages_py"
+	@echo "... beginner_tutorials_generate_messages"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... edit_cache"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
@@ -495,15 +684,18 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... test"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... beginner_tutorials_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... publisher"
-	@echo "... install/strip"
-	@echo "... subscriber"
-	@echo "... install/local"
+	@echo "... _beginner_tutorials_generate_messages_check_deps_changeBaseString"
+	@echo "... beginner_tutorials_generate_messages_cpp"
+	@echo "... beginner_tutorials_gencpp"
+	@echo "... beginner_tutorials_generate_messages_eus"
+	@echo "... beginner_tutorials_generate_messages_lisp"
+	@echo "... test"
+	@echo "... beginner_tutorials_geneus"
 	@echo "... scripts/publisher.o"
 	@echo "... scripts/publisher.i"
 	@echo "... scripts/publisher.s"
