@@ -30,6 +30,25 @@ int main(int argc, char **argv) {
 
   double rate;
   n.getParam("/my_rate", rate);
+  if(rate <= 500 && rate > 0)
+  {
+    ROS_DEBUG_STREAM("Loop Rate Received from roslaunch argument is " << rate);
+  }
+  else if(rate > 500){
+    ROS_ERROR_STREAM("Loop Rate is too high");
+    ROS_WARN_STREAM("Setting the loop rate to default value of 10 Hz");
+    rate = 10;
+  }
+  else if(rate < 0){
+    ROS_ERROR_STREAM("Loop Rate cannot be negative");
+    ROS_WARN_STREAM("Setting the loop rate to default value of 10 Hz");
+    rate = 10;
+  }
+  else if(rate == 0){
+    ROS_FATAL_STREAM("Loop Rate cannot be zero");
+    ROS_WARN_STREAM("Setting the loop rate to default value of 10 Hz");
+    rate = 10;
+  }
   ros::Rate loop_rate(rate);
   
   std_msgs::String msg;
