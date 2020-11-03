@@ -15,7 +15,6 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 
-#include <sstream>
 
 /**
  * @brief This is the main function where node is created named publisher.
@@ -29,7 +28,10 @@ int main(int argc, char **argv) {
   ros::NodeHandle n;
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 
-  ros::Rate loop_rate(10);
+  double rate;
+  n.getParam("/my_rate", rate);
+  ros::Rate loop_rate(rate);
+  
   std_msgs::String msg;
   msg.data = "Robots are Awesome";
 

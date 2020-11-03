@@ -11,8 +11,6 @@ ros/ros.h
 -
 std_msgs/String.h
 -
-sstream
--
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h
