@@ -134,10 +134,12 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- add_executable(publisher scripts/publisher.cpp)
- add_executable(subscriber scripts/subscriber.cpp)
- add_dependencies(publisher beginner_tutorials_generate_messages_cpp)
- add_dependencies(subscriber beginner_tutorials_generate_messages_cpp)
+ add_executable(talker scripts/talker.cpp)
+ target_link_libraries(talker ${catkin_LIBRARIES})
+ add_dependencies(talker beginner_tutorials_generate_messages_cpp)
+ add_executable(listener scripts/listener.cpp)
+ target_link_libraries(listener ${catkin_LIBRARIES})
+ add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,8 +152,6 @@ include_directories(
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(publisher ${catkin_LIBRARIES})
- target_link_libraries(subscriber ${catkin_LIBRARIES})
 
 
 #############

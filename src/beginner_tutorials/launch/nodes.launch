@@ -2,12 +2,12 @@
     <arg name="my_rate" default="2" doc="my_rate"/>
     <param name="my_rate" value="$(arg my_rate)"/>
     <node pkg="beginner_tutorials"
-          type="publisher"
+          type="talker"
           name="talker_publisher"
           output="screen"/>
 
     <node pkg="beginner_tutorials"
-          type="subscriber"
+          type="listener"
           name="listener_subscriber"
           output="screen"/>
 </launch>

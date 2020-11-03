@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -121,6 +110,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -166,34 +166,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-beginner_tutorials/CMakeFiles/subscriber.dir/rule:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/subscriber.dir/rule
-.PHONY : beginner_tutorials/CMakeFiles/subscriber.dir/rule
+beginner_tutorials/CMakeFiles/listener.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/listener.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/listener.dir/rule
 
 # Convenience name for target.
-subscriber: beginner_tutorials/CMakeFiles/subscriber.dir/rule
+listener: beginner_tutorials/CMakeFiles/listener.dir/rule
 
-.PHONY : subscriber
+.PHONY : listener
 
 # fast build rule for target.
-subscriber/fast:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/build
-.PHONY : subscriber/fast
+listener/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/build
+.PHONY : listener/fast
 
 # Convenience name for target.
-beginner_tutorials/CMakeFiles/publisher.dir/rule:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/publisher.dir/rule
-.PHONY : beginner_tutorials/CMakeFiles/publisher.dir/rule
+beginner_tutorials/CMakeFiles/talker.dir/rule:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/talker.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/talker.dir/rule
 
 # Convenience name for target.
-publisher: beginner_tutorials/CMakeFiles/publisher.dir/rule
+talker: beginner_tutorials/CMakeFiles/talker.dir/rule
 
-.PHONY : publisher
+.PHONY : talker
 
 # fast build rule for target.
-publisher/fast:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/build
-.PHONY : publisher/fast
+talker/fast:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
 
 # Convenience name for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/rule:
@@ -600,59 +600,59 @@ beginner_tutorials_geneus/fast:
 	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/build
 .PHONY : beginner_tutorials_geneus/fast
 
-scripts/publisher.o: scripts/publisher.cpp.o
+scripts/listener.o: scripts/listener.cpp.o
 
-.PHONY : scripts/publisher.o
-
-# target to build an object file
-scripts/publisher.cpp.o:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/scripts/publisher.cpp.o
-.PHONY : scripts/publisher.cpp.o
-
-scripts/publisher.i: scripts/publisher.cpp.i
-
-.PHONY : scripts/publisher.i
-
-# target to preprocess a source file
-scripts/publisher.cpp.i:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/scripts/publisher.cpp.i
-.PHONY : scripts/publisher.cpp.i
-
-scripts/publisher.s: scripts/publisher.cpp.s
-
-.PHONY : scripts/publisher.s
-
-# target to generate assembly for a file
-scripts/publisher.cpp.s:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/scripts/publisher.cpp.s
-.PHONY : scripts/publisher.cpp.s
-
-scripts/subscriber.o: scripts/subscriber.cpp.o
-
-.PHONY : scripts/subscriber.o
+.PHONY : scripts/listener.o
 
 # target to build an object file
-scripts/subscriber.cpp.o:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/scripts/subscriber.cpp.o
-.PHONY : scripts/subscriber.cpp.o
+scripts/listener.cpp.o:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/scripts/listener.cpp.o
+.PHONY : scripts/listener.cpp.o
 
-scripts/subscriber.i: scripts/subscriber.cpp.i
+scripts/listener.i: scripts/listener.cpp.i
 
-.PHONY : scripts/subscriber.i
+.PHONY : scripts/listener.i
 
 # target to preprocess a source file
-scripts/subscriber.cpp.i:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/scripts/subscriber.cpp.i
-.PHONY : scripts/subscriber.cpp.i
+scripts/listener.cpp.i:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/scripts/listener.cpp.i
+.PHONY : scripts/listener.cpp.i
 
-scripts/subscriber.s: scripts/subscriber.cpp.s
+scripts/listener.s: scripts/listener.cpp.s
 
-.PHONY : scripts/subscriber.s
+.PHONY : scripts/listener.s
 
 # target to generate assembly for a file
-scripts/subscriber.cpp.s:
-	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/scripts/subscriber.cpp.s
-.PHONY : scripts/subscriber.cpp.s
+scripts/listener.cpp.s:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/scripts/listener.cpp.s
+.PHONY : scripts/listener.cpp.s
+
+scripts/talker.o: scripts/talker.cpp.o
+
+.PHONY : scripts/talker.o
+
+# target to build an object file
+scripts/talker.cpp.o:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/scripts/talker.cpp.o
+.PHONY : scripts/talker.cpp.o
+
+scripts/talker.i: scripts/talker.cpp.i
+
+.PHONY : scripts/talker.i
+
+# target to preprocess a source file
+scripts/talker.cpp.i:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/scripts/talker.cpp.i
+.PHONY : scripts/talker.cpp.i
+
+scripts/talker.s: scripts/talker.cpp.s
+
+.PHONY : scripts/talker.s
+
+# target to generate assembly for a file
+scripts/talker.cpp.s:
+	cd /home/divyam/beginner_tutorials/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/scripts/talker.cpp.s
+.PHONY : scripts/talker.cpp.s
 
 # Help Target
 help:
@@ -664,10 +664,10 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... subscriber"
-	@echo "... publisher"
+	@echo "... install/strip"
+	@echo "... listener"
+	@echo "... talker"
 	@echo "... beginner_tutorials_genpy"
 	@echo "... beginner_tutorials_gennodejs"
 	@echo "... beginner_tutorials_genlisp"
@@ -696,12 +696,12 @@ help:
 	@echo "... beginner_tutorials_generate_messages_lisp"
 	@echo "... test"
 	@echo "... beginner_tutorials_geneus"
-	@echo "... scripts/publisher.o"
-	@echo "... scripts/publisher.i"
-	@echo "... scripts/publisher.s"
-	@echo "... scripts/subscriber.o"
-	@echo "... scripts/subscriber.i"
-	@echo "... scripts/subscriber.s"
+	@echo "... scripts/listener.o"
+	@echo "... scripts/listener.i"
+	@echo "... scripts/listener.s"
+	@echo "... scripts/talker.o"
+	@echo "... scripts/talker.i"
+	@echo "... scripts/talker.s"
 .PHONY : help
 
 

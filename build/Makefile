@@ -283,30 +283,30 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named subscriber
+# Target rules for targets named listener
 
 # Build rule for target.
-subscriber: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 subscriber
-.PHONY : subscriber
+listener: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 listener
+.PHONY : listener
 
 # fast build rule for target.
-subscriber/fast:
-	$(MAKE) -f beginner_tutorials/CMakeFiles/subscriber.dir/build.make beginner_tutorials/CMakeFiles/subscriber.dir/build
-.PHONY : subscriber/fast
+listener/fast:
+	$(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/build
+.PHONY : listener/fast
 
 #=============================================================================
-# Target rules for targets named publisher
+# Target rules for targets named talker
 
 # Build rule for target.
-publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 publisher
-.PHONY : publisher
+talker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 talker
+.PHONY : talker
 
 # fast build rule for target.
-publisher/fast:
-	$(MAKE) -f beginner_tutorials/CMakeFiles/publisher.dir/build.make beginner_tutorials/CMakeFiles/publisher.dir/build
-.PHONY : publisher/fast
+talker/fast:
+	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
 
 #=============================================================================
 # Target rules for targets named beginner_tutorials_genpy
@@ -681,8 +681,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... subscriber"
-	@echo "... publisher"
+	@echo "... listener"
+	@echo "... talker"
 	@echo "... beginner_tutorials_genpy"
 	@echo "... beginner_tutorials_gennodejs"
 	@echo "... beginner_tutorials_genlisp"
