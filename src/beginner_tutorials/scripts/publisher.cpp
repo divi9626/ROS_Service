@@ -14,8 +14,18 @@
  */
 #include <ros/ros.h>
 #include <std_msgs/String.h>
+#include "../include/publisher.hpp"
+#include "../beginner_tutorials/changeBaseString.h"
 
+DefaultString obj;
 
+bool newMessage(beginner_tutorials::changeBaseString::Request &requestService,
+                beginner_tutorials::changeBaseString::Response &responseClient) {
+  obj.default_msg = req.inputString;
+  ROS_WARN_STREAM("The user changed the string");
+  responseClient.newString = requestService.inputString;
+  return true;
+}
 /**
  * @brief This is the main function where node is created named publisher.
  * @brief It publishes data on chatter topic in the string format
@@ -56,6 +66,7 @@ int main(int argc, char **argv) {
 
   while (ros::ok()) {
 
+    ROS_INFO_STREAM(msg_data);
     chatter_pub.publish(msg);
     ros::spinOnce();
     loop_rate.sleep();
