@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
   ros::NodeHandle n;
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
   auto server = n.advertiseService("changeBaseString", newMessage);
-  tf::TransformBroadcaster br;
+  static tf::TransformBroadcaster br;
   tf::Transform transform;
 
   double rate;

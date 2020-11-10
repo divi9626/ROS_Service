@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite errors="0" failures="1" name="unittest.suite.TestSuite" tests="1" time="3.668"><testcase classname="rostest.runner.RosTest" name="testtalkerTest" time="3.6677"><failure type="AssertionError">test [talkerTest] did not generate test results
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/rostest/runner.py", line 164, in fn
+    self.assert_(os.path.isfile(test_file), "test [%s] did not generate test results"%test_name)
+  File "/usr/lib/python2.7/unittest/case.py", line 422, in assertTrue
+    raise self.failureException(msg)
+</failure></testcase><system-out>&lt;![CDATA[
+[ROSTEST]setup[/home/divyam/beginner_tutorials/src/beginner_tutorials/test/talkerTest.launch] run_id[e418246c-2335-11eb-b4c1-0871907395a6] starting
+&amp;#x001B;[1mstarted roslaunch server http://divyam-GF63-Thin-9SC:32789/&amp;#x001B;[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /my_rate: 2
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.16
+
+NODES
+  /
+    talker (beginner_tutorials/talker)
+
+[ROSTEST]setup[/home/divyam/beginner_tutorials/src/beginner_tutorials/test/talkerTest.launch] run_id[e418246c-2335-11eb-b4c1-0871907395a6] done
+[ROSTEST]Running test [talkerTest]
+&amp;#x001B;[1mROS_MASTER_URI=http://divyam-GF63-Thin-9SC:32959/&amp;#x001B;[0m
+&amp;#x001B;[1msetting /run_id to e418246c-2335-11eb-b4c1-0871907395a6&amp;#x001B;[0m
+&amp;#x001B;[1mprocess[talker-1]: started with pid [30759]&amp;#x001B;[0m
+[ROSTEST]removing previous test results file [/home/divyam/beginner_tutorials/build/test_results/beginner_tutorials/rosunit-talkerTest.xml]
+[ROSTEST]running test talkerTest
+&amp;#x001B;[1mprocess[talkerTest-2]: started with pid [30760]&amp;#x001B;[0m
+[talkerTest-2] killing on exit
+[talker-1] killing on exit
+[ROSTEST]test [talkerTest] finished
+[ROSTEST]tearDown[/home/divyam/beginner_tutorials/src/beginner_tutorials/test/talkerTest.launch]
+shutting down processing monitor...
+... shutting down processing monitor complete
+[ROSTEST]rostest teardown /home/divyam/beginner_tutorials/src/beginner_tutorials/test/talkerTest.launch complete
+
+]]&gt;</system-out><system-err>&lt;![CDATA[
+
+]]&gt;</system-err></testsuite>

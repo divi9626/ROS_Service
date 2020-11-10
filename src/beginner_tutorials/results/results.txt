@@ -1,11 +1,20 @@
 CPP-LINT
 
-Done processing ./publisher.cpp
-Done processing ./suscriber.cpp
+Done processing ./talker.cpp
+Done processing ./listener.cpp
+Done processing ./src/talker.cpp
+Done processing ./test/main.cpp
+Done processing ./test/testTalkerNode.cpp
 
 CPP-CHECK
-Checking src/beginner_tutorials/scripts/publisher.cpp...
-1/2 files checked 52% done
-Checking src/beginner_tutorials/scripts/subscriber.cpp...
-2/2 files checked 100% done
+Checking src/beginner_tutorials/scripts/listener.cpp...
+1/4 files checked 17% done
+Checking src/beginner_tutorials/scripts/talker.cpp...
+2/4 files checked 73% done
+Checking src/beginner_tutorials/test/main.cpp...
+3/4 files checked 81% done
+Checking src/beginner_tutorials/test/talkerTest.cpp...
+4/4 files checked 100% done
+(information) Cppcheck cannot find all the include files (use --check-config for details)
+
 
