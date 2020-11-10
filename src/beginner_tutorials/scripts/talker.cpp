@@ -13,6 +13,7 @@
  * including ros headers
  */
 #include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
 #include <std_msgs/String.h>
 #include "../include/talker.hpp"
 #include "beginner_tutorials/changeBaseString.h"
@@ -37,6 +38,8 @@ int main(int argc, char **argv) {
   ros::NodeHandle n;
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
   auto server = n.advertiseService("changeBaseString", newMessage);
+  tf::TransformBroadcaster br;
+  tf::Transform transform;
 
   double rate;
   n.getParam("/my_rate", rate);
@@ -70,6 +73,10 @@ int main(int argc, char **argv) {
     msg.data = msg_data;
     ROS_INFO_STREAM(msg_data);
     chatter_pub.publish(msg);
+
+    transform.setOrigin(tf::Vector3(sin(ros::Time::now().toSec()), cos(ros::Time::now().toSec()), 0.0));
+    transform.setRotation( tf::Quaternion(0, 0, 0, 1) );
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world_frame", "my_frame"));
 
     ros::spinOnce();
     loop_rate.sleep();
