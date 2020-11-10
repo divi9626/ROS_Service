@@ -8,6 +8,9 @@ Beginner_tutorials
  1) roscpp
  2) rospy
  3) std_msgs
+ 4) message_generations
+ 5) genmsg
+ 6) tf
  
 ###To download the project:
 '''
@@ -33,4 +36,36 @@ rosservice call /changeBaseString "<text>"
 ### to check logging
 '''
 rqt_console
+'''
+
+### to check tf
+''' 
+roslaunch beginner_tutorials nodes.launch
+rosrun tf tf_echo /world_frame /my_frame
+
+rosrun rqt_tf_tree rqt_tf_tree
+'''
+
+### to check ros tests
+''' 
+cd <workspace>
+catkin_make run_tests_beginner_tutorials
+Images of output in result folder
+'''
+
+### to record rosbag
+'''
+source /devel/setup.bash
+roslaunch beginner_tutorials nodes.launch
+rosrun beginner_tutorials listener
+cd <workspace>/src/beginner_tutorials/results
+rosbag record -a
+Rename the .bag file to rosbagg.bag
+'''
+
+### to play rosbag
+'''
+cd <workspace>/src/beginner_tutorials/results
+rosbag play rosbagg.bag
+rosbag info rosbagg.bag
 '''

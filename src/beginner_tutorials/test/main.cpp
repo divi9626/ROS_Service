@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @brief This files runs all the tests
+ * @author Divyam Garg 
+ * @license MIT 
+ * @version 0.1
+ * @date 2020-11-09
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 #include <ros/ros.h>
 #include <gtest/gtest.h>
 
